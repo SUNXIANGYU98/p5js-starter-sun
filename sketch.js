@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background(100);
   orbitControl();
   ambientLight(100);
   directionalLight(255, 255, 255, 0.5, 1, -0.5);
@@ -44,14 +44,8 @@ function draw() {
       rotateZ(frameCount * 0.01);
     }
 
-    // Fill with 30% opacity
-    let fillColor = color(cubo.col);
-    fillColor.setAlpha(77); // 30% of 255
-    ambientMaterial(fillColor);
-    emissiveMaterial(fillColor);
-    fill(fillColor);
-
-    // Glowing edge
+    // Glowing edge only
+    noFill();
     let edgeColor = color(cubo.col);
     edgeColor.setAlpha(200);
     stroke(edgeColor);
