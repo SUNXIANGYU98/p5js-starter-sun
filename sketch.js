@@ -1,5 +1,21 @@
-let copie = 100;
+/** @typedef {import("./p5/types/index")} Graphics */
+
+/**
+ * @typedef {Object} Cubo
+ * @property {number} x
+ * @property {number} y
+ * @property {number} z
+ * @property {number} size
+ * @property {string} color
+ * @property {function} rotationFunction
+ */
+
+//
+/** @type{Cubo[]} */
 let cubi = [];
+let copie = 400;
+
+let g;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -34,7 +50,6 @@ function draw() {
     push();
     translate(cubo.x, cubo.y, cubo.z);
 
-    // Rotate based on color
     let colLower = cubo.col.toLowerCase();
     if (["red", "blue", "yellow"].includes(colLower)) {
       rotateX(frameCount * 0.01);
@@ -44,7 +59,6 @@ function draw() {
       rotateZ(frameCount * 0.01);
     }
 
-    // Glowing edge only
     noFill();
     let edgeColor = color(cubo.col);
     edgeColor.setAlpha(200);
