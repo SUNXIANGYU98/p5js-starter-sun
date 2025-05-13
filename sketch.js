@@ -52,7 +52,7 @@ function draw() {
   directionalLight(255, 255, 255, 0.5, 1, -0.5);
 
   g.background("white");
-  g.text("ciao", 0, g.height);
+  g.text("孙", 0, g.height);
   g.textSize(g.height);
 
   texture(g);
@@ -70,11 +70,6 @@ function draw() {
     } else {
       rotateZ(frameCount * 0.01);
     }
-
-    // 设置半透明填充
-    let c = color(cubo.col);
-    c.setAlpha(127); // 50% 透明度
-    fill(c);
 
     // 发光边框
     stroke(cubo.col);

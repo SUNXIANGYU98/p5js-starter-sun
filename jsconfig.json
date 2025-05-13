@@ -6,6 +6,7 @@
     "./p5/types/lib/addons/p5.sound.d.ts"
   ],
   "compilerOptions": {
-    "checkJs": true
+    "checkJs": true,
+    "lib": ["ESNext"]
   }
 }
